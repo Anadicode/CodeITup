@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    body { 
+      margin: 0; 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      display: flex; 
+      flex-direction: column; 
+      min-height: 100vh; 
+    }
+    header { background: #333; color: white; padding: 15px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .hero { 
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed; 
+      flex: 1; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      color: white; 
+    }
+    .hero h1 { font-size: 3em; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
+    .btn { display: inline-block; margin-top: 20px; padding: 12px 20px; background: #ff5722; color: white; text-decoration: none; border-radius: 5px; }
+    .btn:hover { background: #e64a19; }
+    footer { background: #222; color: #bbb; padding: 15px; font-size: 14px; }
+    footer a { color: #ff5722; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>My Website</h2>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/host/register">Register</a>
+      <a href="/basic/main">Main</a>
+      <a href="/host/products">Products</a>
+      <a href="/basic/regiterUser">Users</a>
+      <a href="/basic/about">About</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div>
+      <h1>Welcome to Our Platform CodeITup 🚀</h1>
+      <a href="/host/register" class="btn">Get Started</a>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 My Website | Built with ❤️ by CodeITup</p>
+    <p>
+      <a href="/basic/about">About</a> | 
+      <a href="/basic/contact">Contact</a> | 
+      <a href="/basic/terms">Terms & Conditions</a>
+    </p>
+  </footer>
+</body>
+</html>
+

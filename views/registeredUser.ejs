@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8f6); /* soft green gradient */
+      position: relative;
+    }
+
+    /* Corner link */
+    .corner-link {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #13AA52; /* MongoDB green */
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .corner-link:hover {
+      background: #0f8a42; /* darker green on hover */
+      transform: scale(1.05);
+    }
+
+    .registrations {
+      max-width: 600px;
+      margin: 60px auto 20px; /* pushed down to avoid overlap with link */
+      padding: 10px;
+    }
+
+    .registrations div {
+      background: #ffffff;
+      border: 2px solid #13AA52; /* Mongo green border */
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border 0.2s ease;
+    }
+
+    .registrations div:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background: #f0fdf4; /* very light green on hover */
+      border-color: #0f8a42; /* darker Mongo green */
+    }
+
+    .registrations div span.name {
+      display: block;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #13AA52; /* Mongo green for names */
+      margin-bottom: 4px;
+    }
+
+    .registrations div span.email {
+      display: block;
+      font-size: 0.95rem;
+      color: #2c3e50; /* dark gray for contrast */
+    }
+  </style>
+</head>
+<body>
+  <!-- Corner link -->
+  <a href="/" class="corner-link">🏠 Home</a>
+
+  <div class="registrations">
+    <% registration.forEach(det => { %>
+      <div>
+        <span class="name"><%= det.fullName %></span>
+        <span class="email"><%= det.email %></span>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
+
+
+
+
+
+

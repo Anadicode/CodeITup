@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+  <style>
+    body { font-family: Arial; margin: 0; background: #f4f6f9; }
+    header { background: #333; color: white; padding: 15px; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    section { padding: 40px; }
+    h2 { margin-bottom: 20px; text-align: center; }
+    .articles { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card { 
+      background: white; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+      overflow: hidden; 
+      text-align: left;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card-content { padding: 15px; }
+    .card-content h3 { margin: 0 0 10px; }
+    .card-content p { color: #555; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Main Content</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/host/register">Register</a>
+      <a href="/host/products">Products</a>
+      <a href="/basic/regiterUser">Users</a>
+      <a href="/basic/about">About</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Our Latest Articles</h2>
+    <div class="articles">
+      
+      <!-- 1 -->
+      <% products.forEach(det=>{ %>
+          <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.4TpY4VFw2ou7d7tLh4g9ZAHaEn?cb=thfvnextucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Web Development">
+        <div class="card-content">
+         <h3>📘<%= det.productName %> </h3> 
+          <p>
+             <%= det.Description  %>
+          </p>
+        </div>
+      </div>
+
+    <%   })%>
+     
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581090700227-4c4f50d3b3f6?auto=format&fit=crop&w=800&q=80" alt="Web Development">
+        <div class="card-content">
+          <h3>📘 Learn Web Development</h3>
+          <p>Master HTML, CSS, and JavaScript to build modern websites and applications.</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Productivity Tools">
+        <div class="card-content">
+          <h3>⚡ Boost Your Workflow</h3>
+          <p>Discover tools and techniques to increase your coding productivity.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80" alt="Cloud Solutions">
+        <div class="card-content">
+          <h3>🚀 Cloud Scaling</h3>
+          <p>Learn how to deploy, scale, and manage apps using cloud platforms.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092919535-7c2e8b1a1b8d?auto=format&fit=crop&w=800&q=80" alt="AI Future">
+        <div class="card-content">
+          <h3>🤖 Future of AI</h3>
+          <p>Explore how Artificial Intelligence is shaping industries and jobs.</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Teamwork">
+        <div class="card-content">
+          <h3>👥 Collaboration Tools</h3>
+          <p>Enhance teamwork with the latest project management software.</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity">
+        <div class="card-content">
+          <h3>🔒 Cybersecurity Basics</h3>
+          <p>Protect your apps and data with strong security practices.</p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523475496153-3d6cc4509b57?auto=format&fit=crop&w=800&q=80" alt="Mobile Apps">
+        <div class="card-content">
+          <h3>📱 Mobile App Trends</h3>
+          <p>See how mobile development is evolving in 2025.</p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Cloud Security">
+        <div class="card-content">
+          <h3>☁️ Cloud Security</h3>
+          <p>Stay safe while using AWS, Azure, or Google Cloud.</p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80" alt="Machine Learning">
+        <div class="card-content">
+          <h3>🧠 Machine Learning</h3>
+          <p>Get started with ML models and real-world use cases.</p>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="VR">
+        <div class="card-content">
+          <h3>🎮 Virtual Reality</h3>
+          <p>Explore VR applications in gaming and education.</p>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80" alt="UI Design">
+        <div class="card-content">
+          <h3>🎨 UI/UX Design</h3>
+          <p>Design beautiful and user-friendly applications.</p>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581092334651-c8a1f1c1d3a7?auto=format&fit=crop&w=800&q=80" alt="Big Data">
+        <div class="card-content">
+          <h3>📊 Big Data Analytics</h3>
+          <p>Analyze data at scale and gain actionable insights.</p>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="5G">
+        <div class="card-content">
+          <h3>📡 The Rise of 5G</h3>
+          <p>Discover how 5G is transforming communication speed.</p>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80" alt="Blockchain">
+        <div class="card-content">
+          <h3>⛓ Blockchain Revolution</h3>
+          <p>Beyond crypto: learn blockchain applications in business.</p>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="Quantum Computing">
+        <div class="card-content">
+          <h3>⚛️ Quantum Computing</h3>
+          <p>Understand the basics of quantum and its future impact.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
+
+
+
