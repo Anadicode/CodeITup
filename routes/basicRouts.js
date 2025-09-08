@@ -3,27 +3,22 @@ const path = require('path');
 
 // local module
 const rootdir= require('../utils/pathUtils');
-const {registration}=require('./hostRouts');
-const {products}=require('./hostRouts');
+
+const basicControler=require('../controllers/basicControllers');
+
+
 
 const basicRouts= express.Router();
 
-basicRouts.get('/main',(req,res,next)=>{
-  // res.sendFile(path.join(rootdir,'views','main.html'));
-  res.render('main',{products});
-});
-
-
-basicRouts.get('/regiterUser',(req,res,next)=>{
-  // res.sendFile(path.join(rootdir,'views','main.html'));
-  res.render('registeredUser',{registration});
-});
+basicRouts.get('/main',basicControler.main);
 
 
 
-basicRouts.get('/about',(req,res,next)=>{
-   res.sendFile(path.join(rootdir,'views','about.html'));
-});
+basicRouts.get('/regiterUser',basicControler.registeredUser);
+
+
+
+basicRouts.get('/about',basicControler.about);
 
 
 module.exports=basicRouts;
