@@ -4,16 +4,21 @@ const path = require('path');
 const rootdir= require('../utils/pathUtils');
 
 
-const {registration}=require('./hostControlers');
-const {products}=require('./hostControlers');
+const {Product}=require('../models/productModels');//importing product class from modles
+const {Registration} =require('../models/ragisteModels');
+
+//const {registration}=require('./hostControlers');
+//const {products}=require('./hostControlers');
 
 exports.main=(req,res,next)=>{
   // res.sendFile(path.join(rootdir,'views','main.html'));
-  res.render('main',{products});
+const hostProducts=Product.fetchAll();
+  res.render('main',{hostProducts});
 };
 
 exports.registeredUser=(req,res,next)=>{
   // res.sendFile(path.join(rootdir,'views','main.html'));
+  const registration = Registration.fetchAll();
   res.render('registeredUser',{registration});
 };
 

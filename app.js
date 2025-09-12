@@ -1,4 +1,5 @@
 const express=require('express');
+const path =require('path');
 
 const index= require('./routes/index');
 const {hostRouts}=require('./routes/hostRouts');
@@ -8,6 +9,10 @@ const app= express();
 
 app.set('view engine','ejs');  // after installing here we set up our Ejs 
 app.set('views','views');
+
+
+app.use(express.static(path.join(__dirname, "./views"))); // this middelware tels the express that serve the view folad as static , 
+                                                          //when we use css as in external file;
 
 app.use(express.urlencoded()) // adding a middel ware for parsing
 

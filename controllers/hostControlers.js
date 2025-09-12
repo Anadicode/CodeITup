@@ -2,8 +2,8 @@ const path=require('path');
 
 const rootdir=require('../utils/pathUtils');
 
-const products=[];
-const registration=[];
+const {Product}=require('../models/productModels');//importing product class from modles
+const {Registration} =require('../models/ragisteModels');
 
            //products 
 exports.getProducts=(req,res,next)=>{
@@ -12,9 +12,13 @@ exports.getProducts=(req,res,next)=>{
 
 exports.postProducts=(req,res,next)=>{     
     console.log(req.body);
-    products.push({productName:req.body.productName,Category:req.body.Category,Description:req.body.Description, Price:req.body.Price});
+    const objectProducts= new Product(req.body.productName,req.body.Category,req.body.Description,req.body.Price)
+    objectProducts.save();
+    
+   const hostProducts=Product.fetchAll();
+
     //res.sendFile(path.join(rootdir,'views','main.html'));  //  sending static file as response
-     res.render('main',{products});     
+     res.render('main',{hostProducts});     
 };
 
         //registration
@@ -26,12 +30,16 @@ exports.getRegistration = (req,res,next)=>{
  exports.postRegistration=(req,res,next)=>{
     
     console.log(req.body);
-    registration.push({fullName:req.body.fullName,email:req.body.email,password:req.body.password, confirmPassword:req.body. confirmPassword});   
+    const objectRegister = new Registration(req.body.fullName,req.body.email,req.body.password,req.body. confirmPassword);   
+     objectRegister.save();
+
+     const registration = Registration.fetchAll();
+    //registration.push({fullName:req.body.fullName,email:req.body.email,password:req.body.password, confirmPassword:req.body. confirmPassword});   
   // res.sendFile(path.join(rootdir,'views','main.html'));  //  sending static file as response
 
     res.render('registeredUser',{registration});
 }
 
 
-exports.products=products;
-exports.registration= registration;
+
+//exports.registration= registration;
